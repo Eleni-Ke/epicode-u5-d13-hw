@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import {
   Container,
   Row,
@@ -7,11 +7,12 @@ import {
   FormControl,
   ListGroup,
   Button,
-} from "react-bootstrap"
+} from "react-bootstrap";
+import { io } from "socket.io-client";
 
 const Home = () => {
-  const [username, setUsername] = useState("")
-  const [message, setMessage] = useState("")
+  const [username, setUsername] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <Container fluid>
@@ -21,14 +22,14 @@ const Home = () => {
           {/* TOP AREA: USERNAME INPUT FIELD */}
           {/* {!loggedIn && ( */}
           <Form
-            onSubmit={e => {
-              e.preventDefault()
+            onSubmit={(e) => {
+              e.preventDefault();
             }}
           >
             <FormControl
               placeholder="Set your username here"
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </Form>
           {/* )} */}
@@ -36,14 +37,14 @@ const Home = () => {
           <ListGroup></ListGroup>
           {/* BOTTOM AREA: NEW MESSAGE */}
           <Form
-            onSubmit={e => {
-              e.preventDefault()
+            onSubmit={(e) => {
+              e.preventDefault();
             }}
           >
             <FormControl
               placeholder="Write your message here"
               value={message}
-              onChange={e => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </Form>
         </Col>
@@ -53,7 +54,7 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
