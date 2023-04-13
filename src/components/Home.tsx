@@ -24,7 +24,7 @@ const Home = () => {
     socket.on("welcome", (welcomeMessage) => {
       console.log(welcomeMessage);
 
-      socket.on("loggenIn", (onlineUsersList) => {
+      socket.on("loggedIn", (onlineUsersList) => {
         console.log(onlineUsersList);
         setOnlineUsers(onlineUsersList);
         setLoggedIn(true);
